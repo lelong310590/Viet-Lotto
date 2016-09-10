@@ -1,0 +1,54 @@
+.check-ticket {
+    background-image: url('../../images/bg.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+}
+
+.check-ticketresult .type-block {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.check-ticket h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 1px 1px #da271a;
+    margin-bottom: 3rem;
+    margin-top: 2rem!important;
+}
+
+.search-result-wrapper .item {
+    background: rgba(255,255,255,.5);
+}
+
+.search-result-wrapper .item-input ion-label, .item-select ion-label, .item-datetime ion-label {
+    color: #fff;
+    text-shadow: 0 1px 1px #da271a;
+}
+
+.select-bao-type {
+    color: #fff;
+    text-shadow: 0 1px 1px #da271a;
+}
+
+.select-kyxo {
+    color: #fff;
+    text-shadow: 0 1px 1px #da271a;
+}
+
+.search-result-show {
+    margin-top: 25px;
+}
+
+.show-table-button {
+    width: 100%;
+    text-align: center;
+    background: #2f3cbb;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 0;
+    float: left;
+}

@@ -1,0 +1,41 @@
+.ball-table-wrapper {
+    background-image: url('../../images/bg.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+}
+
+.ball-table {
+    padding: 0;
+    text-align: center;
+    display: table;
+}
+
+.ball-cell {
+    padding: 5px;
+    color: #000;
+    font-weight: 700;
+    border: 1px solid #1732b1;
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.ball-cell a {
+    width: 36px;
+    height: 36px;
+    float: left;
+    padding: 10px;
+    color: #b71c1c;
+    white-space: nowrap;
+}
+
+.ball-cell .checked-number {
+    background: #1c5bb7;
+    color: #fff;
+    border-radius: 100%;
+}

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Chọn số
+    </ion-title>
+    <ion-buttons start>
+      <button (click)="dismiss()">
+        <span primary showWhen="ios">Thoát</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="modal45">
+    <div class="search-result-wrapper ball-table-wrapper">
+        <div class="search-result-row">
+            <ul class="ball-table">
+                <li *ngFor="let ballNo of number" class="ball-cell"><a [ngClass]="checkedNumber" (click)="toggleCheck()">{{ ballNo }}</a></li>
+            </ul>
+        </div>
+    </div>
+</ion-content>

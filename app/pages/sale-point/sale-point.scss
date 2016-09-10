@@ -1,0 +1,21 @@
+.sale-point {
+    background-image: url('../../images/bg-blue.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+}
+
+.sale-point .type-block {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.sale-point h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 1px 1px #da271a;
+    margin-bottom: 3rem;
+    margin-top: 2rem!important;
+}

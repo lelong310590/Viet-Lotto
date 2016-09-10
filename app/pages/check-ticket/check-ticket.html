@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><ion-img src="./images/logo.png" class="center-block" width="72" height="45"></ion-img></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="check-ticket">
+    <div class="search-result-wrapper">
+        <ion-item>
+            <ion-label>Loại bao: </ion-label>
+            <ion-select [(ngModel)]="selectBao" (ngModelChange)="onChangeBao($event)" okText="Chọn" cancelText="Thoát" class="select-bao-type">
+                <ion-option *ngFor="let item of bao"  (ngValue)="item" >{{ item }}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Kỳ xổ</ion-label>
+            <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD MMY YYYY" [(ngModel)]="kyxo" (ngModelChange)="onChangeKyXo($event)" min="2016" class="select-kyxo" cancelText="Thoát" doneText="Chọn" monthNames="Tháng 1, Tháng 2, Tháng 3, Tháng 4, Tháng 5, Tháng 6, Tháng 8, Tháng 9, Tháng 10, Tháng 11, Tháng 12"></ion-datetime>
+        </ion-item>
+        <div class="search-result-show">
+            <ion-button (click)="presentModal('ballNo1')" class="show-table-button">Chọn bảng số</ion-button>
+            <!--<ul class="ball-list">
+                <li><a (click)="presentModal('ballNo1')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
+                <li><a (click)="presentModal('ballNo2')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
+                <li><a (click)="presentModal('ballNo3')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
+                <li><a (click)="presentModal('ballNo4')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
+                <li><a (click)="presentModal('ballNo5')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
+                <li><a (click)="presentModal('ballNo6')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
+            </ul>-->
+        </div>
+    </div>
+</ion-content>

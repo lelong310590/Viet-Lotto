@@ -1,0 +1,161 @@
+.back-button.show-back-button {
+    position: absolute;
+    z-index: 999;
+}
+
+.search-result {
+    background-image: url('../../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.search-result-wrapper {
+    display: block;
+    position: relative;
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+
+.search-result-wrapper h2 {
+    color: #fff;
+    text-shadow: 0 1px 1px #000;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.ball-list {
+    padding: 0;
+    text-align: center;
+}
+
+.ball-list li {
+    display: inline-block;
+    list-style: none;
+}
+
+.search-result-row {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    background: rgba(255,255,255,.5);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.ball-list li:nth-child(1) .ball-number {
+    background: #e01313;
+}
+
+.ball-list li:nth-child(2) .ball-number {
+    background: #fdfd1f;
+}
+
+.ball-list li:nth-child(3) .ball-number {
+    background: #0f17d4;
+}
+
+.ball-list li:nth-child(4) .ball-number {
+    background: #16b321;
+}
+
+.ball-list li:nth-child(5) .ball-number {
+    background: #bb12b0;
+}
+
+.ball-list li:nth-child(6) .ball-number {
+    background: #000;
+}
+
+.ball-number {
+    float: left;
+    margin-right: 5px;
+    padding: 7px;
+    border-radius: 100%;
+}
+
+.ball-wrapper {
+    padding: 4px;
+    background: #fff;
+    border-radius: 100%;
+    font-weight: 700;
+    float: left;
+    text-align: center;
+}
+
+.prize-result {
+    float: left;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.prize-result h1 {
+    width: 100%;
+    float: left;
+    background: #1a237e;
+    font-size: 1.5rem;
+    padding: 5px 0;
+    color: #fff;
+}
+
+.prize-result money {
+    width: 100%;
+    float: left;
+    color: red;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 1px 1px #fff
+}
+
+.prize-result money sub {
+    font-size: 2rem;
+}
+
+.prize-table {
+    width: 100%;
+    margin-top: 15px;
+    float: left;
+}
+
+.prize-table tr {
+    color: #fff;
+}
+
+.prize-table td {
+    padding: 5px;
+    width: 33%;
+    text-align: left;
+}
+
+.prize-table thead tr {
+    background: #1a237e;
+    color: #fff;
+}
+
+.prize-table tbody tr:nth-child(even) {
+    background: #6371bd;
+}
+
+.search-date-picker {
+    padding: 15px;
+}
+
+.search-date-picker h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 1px #000;
+    font-weight: 700;
+}
+
+.search-date-picker .item-inner {
+    border: none;
+}
+
+.search-date-picker .item-input ion-label, .item-select ion-label, .item-datetime ion-label {
+    color: #000;
+    text-shadow: none;
+    font-size: 1.4rem;
+}
