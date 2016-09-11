@@ -82,6 +82,7 @@ export class SearchResult {
     },
     (error) => {
       console.log(error);
+      loader.dismiss();
     }
     );
 

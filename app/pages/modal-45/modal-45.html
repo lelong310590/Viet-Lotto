@@ -13,11 +13,59 @@
 </ion-header>
 
 <ion-content class="modal45">
-    <div class="search-result-wrapper ball-table-wrapper">
-        <div class="search-result-row">
-            <ul class="ball-table">
-                <li *ngFor="let ballNo of number" class="ball-cell"><a [ngClass]="checkedNumber" (click)="toggleCheck()">{{ ballNo }}</a></li>
-            </ul>
-        </div>
+  <div class="search-result-wrapper ball-table-wrapper">
+    <div class="search-result-row">
+      <p>Bạn đã chọn {{ restBall }}/{{ totalBallQlt }} số phải chọn</p>
+
+      <!--Đoạn này kiểu gì cũng phải viết lại-->
+      <ul class="ball-table">
+        <li class="ball-cell"><a (click)="c1 = !c1; selectBall(1, c1)" [ngClass]="{'checked-number': c1, '': !c1}">01</a></li>
+        <li class="ball-cell"><a (click)="c2 = !c2; selectBall(2, c2)" [ngClass]="{'checked-number': c2, '': !c2}">02</a></li>
+        <li class="ball-cell"><a (click)="c3 = !c3; selectBall(3, c3)" [ngClass]="{'checked-number': c3, '': !c3}">03</a></li>
+        <li class="ball-cell"><a (click)="c4 = !c4; selectBall(4, c4)" [ngClass]="{'checked-number': c4, '': !c4}">04</a></li>
+        <li class="ball-cell"><a (click)="c5 = !c5; selectBall(5, c5)" [ngClass]="{'checked-number': c5, '': !c5}">05</a></li>
+        <li class="ball-cell"><a (click)="c6 = !c6; selectBall(6, c6)" [ngClass]="{'checked-number': c6, '': !c6}">06</a></li>
+        <li class="ball-cell"><a (click)="c7 = !c7; selectBall(7, c7)" [ngClass]="{'checked-number': c7, '': !c7}">07</a></li>
+        <li class="ball-cell"><a (click)="c8 = !c8; selectBall(8, c8)" [ngClass]="{'checked-number': c8, '': !c8}">08</a></li>
+        <li class="ball-cell"><a (click)="c9 = !c9; selectBall(9, c9)" [ngClass]="{'checked-number': c9, '': !c9}">09</a></li>
+        <li class="ball-cell"><a (click)="c10 = !c10; selectBall(10, c10)" [ngClass]="{'checked-number': c10, '': !c10}">10</a></li>
+        <li class="ball-cell"><a (click)="c11 = !c11; selectBall(11, c11)" [ngClass]="{'checked-number': c11, '': !c11}">11</a></li>
+        <li class="ball-cell"><a (click)="c12 = !c12; selectBall(12, c12)" [ngClass]="{'checked-number': c12, '': !c12}">12</a></li>
+        <li class="ball-cell"><a (click)="c13 = !c13; selectBall(13, c13)" [ngClass]="{'checked-number': c13, '': !c13}">13</a></li>
+        <li class="ball-cell"><a (click)="c14 = !c14; selectBall(14, c14)" [ngClass]="{'checked-number': c14, '': !c14}">14</a></li>
+        <li class="ball-cell"><a (click)="c15 = !c15; selectBall(15, c15)" [ngClass]="{'checked-number': c15, '': !c15}">15</a></li>
+        <li class="ball-cell"><a (click)="c16 = !c16; selectBall(16, c16)" [ngClass]="{'checked-number': c16, '': !c16}">16</a></li>
+        <li class="ball-cell"><a (click)="c17 = !c17; selectBall(17, c17)" [ngClass]="{'checked-number': c17, '': !c17}">17</a></li>
+        <li class="ball-cell"><a (click)="c18 = !c18; selectBall(18, c18)" [ngClass]="{'checked-number': c18, '': !c18}">18</a></li>
+        <li class="ball-cell"><a (click)="c19 = !c19; selectBall(19, c19)" [ngClass]="{'checked-number': c19, '': !c19}">19</a></li>
+        <li class="ball-cell"><a (click)="c20 = !c20; selectBall(20, c20)" [ngClass]="{'checked-number': c20, '': !c20}">20</a></li>
+        <li class="ball-cell"><a (click)="c21 = !c21; selectBall(21, c21)" [ngClass]="{'checked-number': c21, '': !c21}">21</a></li>
+        <li class="ball-cell"><a (click)="c22 = !c22; selectBall(22, c22)" [ngClass]="{'checked-number': c22, '': !c22}">22</a></li>
+        <li class="ball-cell"><a (click)="c23 = !c23; selectBall(23, c23)" [ngClass]="{'checked-number': c23, '': !c23}">23</a></li>
+        <li class="ball-cell"><a (click)="c24 = !c24; selectBall(24, c24)" [ngClass]="{'checked-number': c24, '': !c24}">24</a></li>
+        <li class="ball-cell"><a (click)="c25 = !c25; selectBall(25, c25)" [ngClass]="{'checked-number': c25, '': !c25}">25</a></li>
+        <li class="ball-cell"><a (click)="c26 = !c26; selectBall(26, c26)" [ngClass]="{'checked-number': c26, '': !c26}">26</a></li>
+        <li class="ball-cell"><a (click)="c27 = !c27; selectBall(27, c27)" [ngClass]="{'checked-number': c27, '': !c27}">27</a></li>
+        <li class="ball-cell"><a (click)="c28 = !c28; selectBall(28, c28)" [ngClass]="{'checked-number': c28, '': !c28}">28</a></li>
+        <li class="ball-cell"><a (click)="c29 = !c29; selectBall(29, c29)" [ngClass]="{'checked-number': c29, '': !c29}">29</a></li>
+        <li class="ball-cell"><a (click)="c30 = !c30; selectBall(30, c30)" [ngClass]="{'checked-number': c30, '': !c30}">30</a></li>
+        <li class="ball-cell"><a (click)="c31 = !c31; selectBall(31, c31)" [ngClass]="{'checked-number': c31, '': !c31}">31</a></li>
+        <li class="ball-cell"><a (click)="c32 = !c32; selectBall(32, c32)" [ngClass]="{'checked-number': c32, '': !c32}">32</a></li>
+        <li class="ball-cell"><a (click)="c33 = !c33; selectBall(33, c33)" [ngClass]="{'checked-number': c33, '': !c33}">33</a></li>
+        <li class="ball-cell"><a (click)="c34 = !c34; selectBall(34, c34)" [ngClass]="{'checked-number': c34, '': !c34}">34</a></li>
+        <li class="ball-cell"><a (click)="c35 = !c35; selectBall(35, c35)" [ngClass]="{'checked-number': c35, '': !c35}">35</a></li>
+        <li class="ball-cell"><a (click)="c36 = !c36; selectBall(36, c36)" [ngClass]="{'checked-number': c36, '': !c36}">36</a></li>
+        <li class="ball-cell"><a (click)="c37 = !c37; selectBall(37, c37)" [ngClass]="{'checked-number': c37, '': !c37}">37</a></li>
+        <li class="ball-cell"><a (click)="c38 = !c38; selectBall(38, c38)" [ngClass]="{'checked-number': c38, '': !c38}">38</a></li>
+        <li class="ball-cell"><a (click)="c39 = !c39; selectBall(39, c39)" [ngClass]="{'checked-number': c39, '': !c39}">39</a></li>
+        <li class="ball-cell"><a (click)="c40 = !c40; selectBall(40, c40)" [ngClass]="{'checked-number': c40, '': !c40}">40</a></li>
+        <li class="ball-cell"><a (click)="c41 = !c41; selectBall(41, c41)" [ngClass]="{'checked-number': c41, '': !c41}">41</a></li>
+        <li class="ball-cell"><a (click)="c42 = !c42; selectBall(42, c42)" [ngClass]="{'checked-number': c42, '': !c42}">42</a></li>
+        <li class="ball-cell"><a (click)="c43 = !c43; selectBall(43, c43)" [ngClass]="{'checked-number': c43, '': !c43}">43</a></li>
+        <li class="ball-cell"><a (click)="c44 = !c44; selectBall(44, c44)" [ngClass]="{'checked-number': c44, '': !c44}">44</a></li>
+        <li class="ball-cell"><a (click)="c45 = !c45; selectBall(45, c45)" [ngClass]="{'checked-number': c45, '': !c45}">45</a></li>
+        <!--<li *ngFor="let ballNo of number" class="ball-cell"><a [ngClass]="checkedNumber" (click)="toggleCheck(ballNo)" [(ngModel)]="binding">{{ ballNo }}</a></li>-->
+      </ul>
     </div>
+  </div>
 </ion-content>

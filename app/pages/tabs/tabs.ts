@@ -20,7 +20,8 @@ export class TabsPage {
     // should be each tab's root Page
     this.tab1Root = Map;
     this.tab2Root = Result;
-    this.tab3Root = SalePoint;
+    // this.tab3Root = SalePoint;
+    this.tab3Root = Map;
     this.tab4Root = CheckTicket;
   }
 }

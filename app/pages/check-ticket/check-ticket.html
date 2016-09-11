@@ -17,7 +17,7 @@
             <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD MMY YYYY" [(ngModel)]="kyxo" (ngModelChange)="onChangeKyXo($event)" min="2016" class="select-kyxo" cancelText="Thoát" doneText="Chọn" monthNames="Tháng 1, Tháng 2, Tháng 3, Tháng 4, Tháng 5, Tháng 6, Tháng 8, Tháng 9, Tháng 10, Tháng 11, Tháng 12"></ion-datetime>
         </ion-item>
         <div class="search-result-show">
-            <ion-button (click)="presentModal('ballNo1')" class="show-table-button">Chọn bảng số</ion-button>
+            <ion-button (click)="presentModal(selectBao)" class="show-table-button">Chọn bảng số</ion-button>
             <!--<ul class="ball-list">
                 <li><a (click)="presentModal('ballNo1')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
                 <li><a (click)="presentModal('ballNo2')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
@@ -26,6 +26,44 @@
                 <li><a (click)="presentModal('ballNo5')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
                 <li><a (click)="presentModal('ballNo6')"><div class="ball-number"><span class="ball-wrapper">??</span></div></a></li>
             </ul>-->
+        </div>
+        <div *ngIf="result == true" >
+            <div class="prize-result">
+                <div *ngIf="return.total == 0" >
+                    <p class="text-center fail"><ion-icon name="sad"></ion-icon> Rất tiếc ! Bạn không trúng giải nào</p>
+                </div>
+                <table class="prize-table">
+                    <thead>
+                        <tr>
+                            <td>Giải</td>
+                            <td>Số lượng</td>
+                            <td>Giá trị (đ)</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jackpot</td>
+                            <td>{{return.detail.jackpot.number}}</td>
+                            <td>{{return.detail.jackpot.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Giải nhất</td>
+                            <td>{{return.detail.prize1.number}}</td>
+                            <td>{{return.detail.prize1.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Giải nhì</td>
+                            <td>{{return.detail.prize2.number}}</td>
+                            <td>{{return.detail.prize2.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Giải ba</td>
+                            <td>{{return.detail.prize3.number}}</td>
+                            <td>{{return.detail.prize3.price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </ion-content>
