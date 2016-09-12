@@ -20,13 +20,19 @@
     margin-top: 2rem!important;
 }
 
+.search-result-wrapper .select-kyxo .item-input ion-label, .item-select ion-label, .item-datetime ion-label {
+    color: #000!important;
+    text-shadow: none!important;
+    font-size: 1.4rem;
+}
+
 .search-result-wrapper .item {
     background: rgba(255,255,255,.5);
 }
 
 .search-result-wrapper .item-input ion-label, .item-select ion-label, .item-datetime ion-label {
-    color: #fff;
-    text-shadow: 0 1px 1px #da271a;
+    // color: #fff;
+    // text-shadow: 0 1px 1px #da271a;
 }
 
 .select-bao-type {

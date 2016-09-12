@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, ModalController, LoadingController} from 'ionic-angular';
+import {NavController, ModalController, LoadingController, Platform} from 'ionic-angular';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Modal45} from '../modal-45/modal-45';
@@ -23,7 +23,9 @@ export class CheckTicket {
   private result: boolean = false;
   private return: any;
 
-  constructor(private navCtrl: NavController, private modalCtrl: ModalController, public http: Http, public loadingCtrl: LoadingController) {
+  private selectedDate: string = '';
+
+  constructor(private navCtrl: NavController, private modalCtrl: ModalController, public http: Http, public loadingCtrl: LoadingController, private platform: Platform) {
     this.baoLoop();
     let date = new Date();
     this.curentDate = date.getFullYear().toString() + this.formatNumber((date.getMonth() + 1).toString()) + this.formatNumber(date.getDate().toString()); //Format lại định dạng ngày tháng
@@ -81,6 +83,27 @@ export class CheckTicket {
     } else {
       return s;
     }
+  }
+
+  public nativeDatePicker() {
+    this.platform.ready().then(() => {
+      DatePicker.show({
+        date: new Date(),
+        mode: 'date',
+        titleText: 'Chọn kỳ',
+        okText: 'Chọn',
+        cancelText: 'Thoát',
+        androidTheme: 5,
+        minDate: new Date('2016-07-25'),
+        maxDate: new Date()
+      }).then(
+        (date) => {
+          console.log("Got date: ", date),
+          this.selectedDate = date.getFullYear().toString() + ' - ' + this.formatNumber((date.getMonth() + 1).toString()) + ' - ' + this.formatNumber(date.getDate().toString());
+        },
+        err => console.log("Error occurred while getting date:", err)
+      );
+    })
   }
  
 }

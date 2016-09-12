@@ -7,9 +7,9 @@
 <ion-content class="search-result">
     <div class="search-date-picker">
         <h2 class="text-center">Tra cứu kết quả theo ngày</h2>
-        <ion-item>
+        <ion-item (click)="nativeDatePicker()">
             <ion-label>Chọn ngày</ion-label>
-            <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD MMY YYYY" [(ngModel)]="dateResultSearch" (ngModelChange)="selectDateResult($event)" min="2016-07-23" class="select-date-result-search" cancelText="Thoát" doneText="Chọn"></ion-datetime>
+            <ion-input type="text" disable (ngValue)="selectedDate"></ion-input>
         </ion-item>
     </div>
 

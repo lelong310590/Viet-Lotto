@@ -12,9 +12,9 @@
                 <ion-option *ngFor="let item of bao"  (ngValue)="item" >{{ item }}</ion-option>
             </ion-select>
         </ion-item>
-        <ion-item>
+        <ion-item (click)="nativeDatePicker()">
             <ion-label>Kỳ xổ</ion-label>
-            <ion-datetime displayFormat="DD-MM-YYYY" pickerFormat="DD MMY YYYY" [(ngModel)]="kyxo" (ngModelChange)="onChangeKyXo($event)" min="2016" class="select-kyxo" cancelText="Thoát" doneText="Chọn" monthNames="Tháng 1, Tháng 2, Tháng 3, Tháng 4, Tháng 5, Tháng 6, Tháng 8, Tháng 9, Tháng 10, Tháng 11, Tháng 12"></ion-datetime>
+            <ion-input type="text" disable (ngValue)="selectedDate"></ion-input>
         </ion-item>
         <div class="search-result-show">
             <ion-button (click)="presentModal(selectBao)" class="show-table-button">Chọn bảng số</ion-button>
