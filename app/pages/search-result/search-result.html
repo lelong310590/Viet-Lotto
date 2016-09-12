@@ -1,111 +1,125 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title><ion-img src="./images/logo.png" class="center-block" width="72" height="45"></ion-img></ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            <p class="text-center"><ion-img src="./images/logo.png" class="center-block" width="72" height="45"></ion-img></p>
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content class="search-result">
-    <div class="search-date-picker">
-        <h2 class="text-center">Tra cứu kết quả theo ngày</h2>
-        <ion-item (click)="nativeDatePicker()">
-            <ion-label>Chọn ngày</ion-label>
-            <ion-input type="text" disabled value="{{ selectedDate }}"></ion-input>
+    <ion-card>
+
+        <img src="./images/mega645.png">
+        
+        <div *ngIf="showNewestResult === false">
+            {{ returnResult.date }}
+            <div *ngFor="let data of returnResult">
+                <ion-item>
+                    <h2><ion-icon name="timer" item-left></ion-icon> Kết quả ngày: {{data.date}}</h2>
+                    <ul class="ball-list">
+                        <li *ngFor="let number of returnprizeResult">
+                            <div class="ball-number"><span class="ball-wrapper">{{ number }}</span></div>
+                        </li>
+                    </ul>
+                </ion-item>
+
+                <ion-item>
+                    <div class="prize-result">
+                        <h1 class="text-center">Giá trị Jackpot</h1>
+                        <money class="text-center">{{data.jackpot_price}} <sup>đ</sup></money>
+                        <table class="prize-table">
+                            <thead>
+                                <tr>
+                                    <td>Giải</td>
+                                    <td>Số lượng</td>
+                                    <td>Giá trị (đ)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jackpot</td>
+                                    <td>{{data.detail.jackpot.number}}</td>
+                                    <td>{{data.detail.jackpot.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Giải nhất</td>
+                                    <td>{{data.detail.prize1.number}}</td>
+                                    <td>{{data.detail.prize1.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Giải nhì</td>
+                                    <td>{{data.detail.prize2.number}}</td>
+                                    <td>{{data.detail.prize2.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Giải ba</td>
+                                    <td>{{data.detail.prize3.number}}</td>
+                                    <td>{{data.detail.prize3.price}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </ion-item>
+            </div>
+        </div>
+
+        <div *ngIf="showNewestResult === true">
+            <div *ngFor="let data of searchResultJackpot">
+                <ion-item>
+                    <h2><ion-icon name="timer" item-left></ion-icon> Kết quả ngày: {{data.date}}</h2>
+                    <ul class="ball-list">
+                        <li *ngFor="let number of prizeResult">
+                            <div class="ball-number"><span class="ball-wrapper">{{ number }}</span></div>
+                        </li>
+                    </ul>
+                </ion-item>
+
+                <ion-item>
+                    <div class="prize-result">
+                        <h1 class="text-center">Giá trị Jackpot</h1>
+                        <money class="text-center">{{data.jackpot_price}} <sup>đ</sup></money>
+                        <table class="prize-table">
+                            <thead>
+                                <tr>
+                                    <td>Giải</td>
+                                    <td>Số lượng</td>
+                                    <td>Giá trị (đ)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jackpot</td>
+                                    <td>{{data.detail.jackpot.number}}</td>
+                                    <td>{{data.detail.jackpot.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Giải nhất</td>
+                                    <td>{{data.detail.prize1.number}}</td>
+                                    <td>{{data.detail.prize1.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Giải nhì</td>
+                                    <td>{{data.detail.prize2.number}}</td>
+                                    <td>{{data.detail.prize2.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Giải ba</td>
+                                    <td>{{data.detail.prize3.number}}</td>
+                                    <td>{{data.detail.prize3.price}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </ion-item>
+            </div>
+        </div>
+
+        <ion-item>
+            <button danger block item-right (click)="nativeDatePicker()">
+                <ion-icon name="calendar"></ion-icon> Chọn ngày
+            </button>
         </ion-item>
-    </div>
 
-    <div *ngIf="showNewestResult === false" >
-        {{ returnResult.date }}
-        <div class="search-result-wrapper" *ngFor="let data of returnResult" >
-            <h2 class="text-center">Kết quả ngày: {{data.date}}</h2>
-            <div class="search-result-row">
-                <ul class="ball-list">
-                    <li *ngFor="let number of returnprizeResult" ><div class="ball-number"><span class="ball-wrapper">{{ number }}</span></div></li>
-                </ul>
-            </div>
-            <div class="prize-result">
-                <h1 class="text-center">Giá trị Jackpot</h1>
-                <money class="text-center">{{data.jackpot_price}} <sup>đ</sup></money>
-                <table class="prize-table">
-                    <thead>
-                        <tr>
-                            <td>Giải</td>
-                            <td>Số lượng</td>
-                            <td>Giá trị (đ)</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jackpot</td>
-                            <td>{{data.detail.jackpot.number}}</td>
-                            <td>{{data.detail.jackpot.price}}</td>
-                        </tr>
-                        <tr>
-                            <td>Giải nhất</td>
-                            <td>{{data.detail.prize1.number}}</td>
-                            <td>{{data.detail.prize1.price}}</td>
-                        </tr>
-                        <tr>
-                            <td>Giải nhì</td>
-                            <td>{{data.detail.prize2.number}}</td>
-                            <td>{{data.detail.prize2.price}}</td>
-                        </tr>
-                        <tr>
-                            <td>Giải ba</td>
-                            <td>{{data.detail.prize3.number}}</td>
-                            <td>{{data.detail.prize3.price}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    </ion-card>
 
-    <div *ngIf="showNewestResult === true">
-        <div class="search-result-wrapper" *ngFor="let data of searchResultJackpot" >
-            <h2 class="text-center">Kết quả ngày: {{data.date}}</h2>
-            <div class="search-result-row">
-                <ul class="ball-list">
-                    <li *ngFor="let number of prizeResult" ><div class="ball-number"><span class="ball-wrapper">{{ number }}</span></div></li>
-                </ul>
-            </div>
-            <div class="prize-result">
-                <h1 class="text-center">Giá trị Jackpot</h1>
-                <money class="text-center">{{data.jackpot_price}} <sup>đ</sup></money>
-                <table class="prize-table">
-                    <thead>
-                        <tr>
-                            <td>Giải</td>
-                            <td>Số lượng</td>
-                            <td>Giá trị (đ)</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jackpot</td>
-                            <td>{{data.detail.jackpot.number}}</td>
-                            <td>{{data.detail.jackpot.price}}</td>
-                        </tr>
-                        <tr>
-                            <td>Giải nhất</td>
-                            <td>{{data.detail.prize1.number}}</td>
-                            <td>{{data.detail.prize1.price}}</td>
-                        </tr>
-                        <tr>
-                            <td>Giải nhì</td>
-                            <td>{{data.detail.prize2.number}}</td>
-                            <td>{{data.detail.prize2.price}}</td>
-                        </tr>
-                        <tr>
-                            <td>Giải ba</td>
-                            <td>{{data.detail.prize3.number}}</td>
-                            <td>{{data.detail.prize3.price}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    
-    
 </ion-content>

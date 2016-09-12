@@ -39,13 +39,13 @@ ionicBootstrap(MyApp, [], {
   tabsHighlight: true,
   platforms: {
     ios: {
-      tabsPlacement: 'bottom',
+      tabsPlacement: 'top',
       iconMode: 'ios',
       pageTransition: 'ios',
       activator: "highlight",
     },
     android: {
-      tabsPlacement: 'bottom',
+      tabsPlacement: 'top',
       tabsLayout: "icon-top",
       iconMode: 'md',
       pageTransition: 'android',

@@ -43,12 +43,12 @@ body {
 }
 
 ion-tabbar {
-    background: #D32F2F;
+    background: #212121;
 }
 
 .tab-button {
     color: #fff;
-    border-right: 1px solid #E53935;
+    border-right: 1px solid #424242;
 }
 
 .tab-button-text {
@@ -57,7 +57,7 @@ ion-tabbar {
 
 .tab-button[aria-selected=true] {
     color: #fff;
-    background: #E53935;
+    background: #424242;
 }
 
 .bar-button-default {
@@ -72,8 +72,12 @@ ion-tabbar {
     color: #fff;
 }
 
+.toolbar-title p {
+    color: #fff;
+}
+
 [tabsHighlight=true] tab-highlight {
-    background: #E53935;
+    background: #424242;
 }
 
 .pull-left {

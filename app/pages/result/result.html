@@ -1,11 +1,27 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title><ion-icon name="list"></ion-icon> <span class="page-title">Tra cứu kết quả</span></ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            <p class="text-center"><ion-img src="./images/logo.png" class="center-block" width="72" height="45"></ion-img></p>
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding class="result">
-    <h1 class="text-center">Kiểm tra kết quả quay số theo ngày</h1>
-    <a (click)="resultSearch()"><ion-img src="./images/mega645.png" class="type-block"></ion-img></a>
-    <a (click)="resultSearchMaxCommingSoon()"><ion-img src="./images/max3d.png" class="type-block"></ion-img></a>
+<ion-content class="result">
+	<ion-card (click)="resultSearch()">
+		<img src="./images/mega645.png">
+		<ion-item>
+			<ion-icon name="ribbon" item-left large></ion-icon>
+			<h2>Mega 6/45</h2>
+			<p>Xổ số điện toán Mega 6/45</p>
+		</ion-item>
+	</ion-card>
+
+	<ion-card (click)="resultSearchMaxCommingSoon()">
+		<img src="./images/max3d.png">
+		<ion-item>
+			<ion-icon name="ribbon" item-left large></ion-icon>
+			<h2>Lotto Max 4D</h2>
+			<p>Tính năng này đang được cập nhật!</p>
+		</ion-item>
+	</ion-card>
 </ion-content>
