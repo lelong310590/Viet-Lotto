@@ -38,17 +38,17 @@ body {
 }
 
 .toolbar-background {
-    background: #C62828;
-    border-color: #C62828;
+    background: #D32F2F;
+    border-color: #D32F2F;
 }
 
 ion-tabbar {
-    background: #C62828;
+    background: #D32F2F;
 }
 
 .tab-button {
     color: #fff;
-    border-right: 1px solid #D32F2F;
+    border-right: 1px solid #E53935;
 }
 
 .tab-button-text {
@@ -57,7 +57,7 @@ ion-tabbar {
 
 .tab-button[aria-selected=true] {
     color: #fff;
-    background: #D32F2F;
+    background: #E53935;
 }
 
 .bar-button-default {
@@ -73,5 +73,13 @@ ion-tabbar {
 }
 
 [tabsHighlight=true] tab-highlight {
-    background: #EF5350;
+    background: #E53935;
+}
+
+.pull-left {
+    float: left;
+}
+
+.page-title {
+    margin-left: 1rem;
 }
