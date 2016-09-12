@@ -41,8 +41,13 @@
 }
 
 .select-kyxo {
-    color: #fff;
-    text-shadow: 0 1px 1px #da271a;
+    color: #000!important;
+    text-shadow: none!important;
+    font-size: 1.4rem;
+}
+
+.select-kyxo .item-input ion-label, .item-select ion-label, .item-datetime ion-label {
+    color: #000!important;
 }
 
 .search-result-show {

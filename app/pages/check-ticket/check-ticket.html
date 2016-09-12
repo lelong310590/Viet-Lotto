@@ -12,9 +12,9 @@
                 <ion-option *ngFor="let item of bao"  (ngValue)="item" >{{ item }}</ion-option>
             </ion-select>
         </ion-item>
-        <ion-item (click)="nativeDatePicker()">
+        <ion-item (click)="nativeDatePicker()" class="select-kyxo">
             <ion-label>Kỳ xổ</ion-label>
-            <ion-input type="text" disable (ngValue)="selectedDate"></ion-input>
+            <ion-input type="text" disabled value="{{ selectedDate }}"></ion-input>
         </ion-item>
         <div class="search-result-show">
             <ion-button (click)="presentModal(selectBao)" class="show-table-button">Chọn bảng số</ion-button>

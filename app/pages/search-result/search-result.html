@@ -9,7 +9,7 @@
         <h2 class="text-center">Tra cứu kết quả theo ngày</h2>
         <ion-item (click)="nativeDatePicker()">
             <ion-label>Chọn ngày</ion-label>
-            <ion-input type="text" disable (ngValue)="selectedDate"></ion-input>
+            <ion-input type="text" disabled value="{{ selectedDate }}"></ion-input>
         </ion-item>
     </div>
 
