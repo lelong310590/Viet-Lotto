@@ -23,43 +23,36 @@ export class Map {
     this.http.get('http://loto.halogi.com/store').map(res => res.json()).subscribe(data => {
         this.mapPosition = data;
        
-
         let map = new GoogleMap('map', {
             zoom: 15
         });
 
         map.on(GoogleMapsEvent.MAP_READY).subscribe( 
             function() {
+                map.setMyLocationEnabled(true);
+                map.setZoom(15);
+
                 Geolocation.getCurrentPosition().then((resp) => {
                     let lat =  resp.coords.latitude; 
                     let long = resp.coords.longitude;
                     let coord = new GoogleMapsLatLng(lat, long); // Current Position
-                    // map.setCenter(coord);
+                    map.setCenter(coord);
                     map.animateCamera({
                       'target': coord,
                       'zoom': 18,
                     });
+
+                    Toast.show("Chọn một đại lý bán vé ở gần bạn và bắt đầu tham gia", '3000', 'center').subscribe(
+                        toast => {
+                            console.log(toast);
+                        }
+                    );
+
+                    // console.log(data);
+                    addMarkers(data, function(markers) {
+                      markers[markers.length - 1].showInfoWindow();
+                    });
                 })
-                
-                let watch = Geolocation.watchPosition();
-                watch.subscribe((data) => {
-                    // data.coords.latitude
-                    // data.coords.longitude
-                })
-            
-                map.setMyLocationEnabled(true);
-                map.setZoom(15);
-    
-                // var data = [
-                //     {'title': 'marker1', 'position': new GoogleMapsLatLng(21.033643, 105.812079)},
-                //     {'title': 'marker2', 'position': new GoogleMapsLatLng(21.033643, 105.812079)},
-                //     {'title': 'markerN', 'position': new GoogleMapsLatLng(21.033643, 105.812079)}
-                // ];
-                
-                console.log(data);
-                addMarkers(data, function(markers) {
-                  markers[markers.length - 1].showInfoWindow();
-                });
                 
                 function addMarkers(data, callback) {
                   var markers = [];
@@ -77,12 +70,6 @@ export class Map {
                       }).then(onMarkerAdded);
                   });
                 }
-
-                Toast.show("Chọn một đại lý bán vé ở gần bạn và bắt đầu tham gia", '5000', 'center').subscribe(
-                    toast => {
-                        console.log(toast);
-                    }
-                );
                 
             } 
         );

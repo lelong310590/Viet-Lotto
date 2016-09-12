@@ -21,6 +21,13 @@
 
 @import "../pages/modal-45/modal-45";
 
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin-ext,vietnamese';
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+}
+
 .center-block {
     display: block;
     margin: 0 auto;
@@ -31,22 +38,26 @@
 }
 
 .toolbar-background {
-    background: #B71C1C;
-    border-color: #B71C1C;
+    background: #C62828;
+    border-color: #C62828;
 }
 
 ion-tabbar {
-    background: #1A237E;
+    background: #C62828;
 }
 
 .tab-button {
-    color: #919191;
-    border-right: 1px solid #202a8f;
+    color: #fff;
+    border-right: 1px solid #D32F2F;
+}
+
+.tab-button-text {
+    text-transform: uppercase;
 }
 
 .tab-button[aria-selected=true] {
     color: #fff;
-    background: #3F51B5;
+    background: #D32F2F;
 }
 
 .bar-button-default {
@@ -59,4 +70,8 @@ ion-tabbar {
 
 .toolbar-title {
     color: #fff;
+}
+
+[tabsHighlight=true] tab-highlight {
+    background: #EF5350;
 }
