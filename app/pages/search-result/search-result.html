@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            <p class="text-center"><ion-img src="./images/logo.png" class="center-block" width="72" height="45"></ion-img></p>
+            <ion-img src="./images/logo.png" class="center-block" width="72" height="45"></ion-img>
         </ion-title>
     </ion-navbar>
 </ion-header>
@@ -15,7 +15,7 @@
             {{ returnResult.date }}
             <div *ngFor="let data of returnResult">
                 <ion-item>
-                    <h2><ion-icon name="timer" item-left></ion-icon> Kết quả ngày: {{data.date}}</h2>
+                    <h2 class="text-center"></ion-icon> Kết quả ngày: {{data.date}}</h2>
                     <ul class="ball-list">
                         <li *ngFor="let number of returnprizeResult">
                             <div class="ball-number"><span class="ball-wrapper">{{ number }}</span></div>

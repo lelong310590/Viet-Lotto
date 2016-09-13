@@ -1,55 +1,51 @@
+// Base import
 import {Component} from '@angular/core';
-import {Platform, ionicBootstrap, LoadingController} from 'ionic-angular';
+import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
+
+// Page Import
 import {TabsPage} from './pages/tabs/tabs';
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+	template: '<ion-nav [root]="rootPage"></ion-nav>'
 })
+
 export class MyApp {
 
-  private rootPage: any;
+	private rootPage: any;
 
-  constructor(private platform: Platform, public loadingCtrl: LoadingController) {
+	constructor(private platform: Platform) {
+		this.rootPage = TabsPage;
+		this.initializeApp();
+	}
 
-    let loading = this.loadingCtrl.create({
-      content: "Đang tải ...",
-    });
-
-    loading.present();
-
-
-    this.rootPage = TabsPage;
-
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.overlaysWebView(true); // let status var overlay webview
-      StatusBar.backgroundColorByHexString('#B71C1C');
-      
-      loading.dismiss();
-
-    });
-  }
+	initializeApp() {
+		this.platform.ready().then(() => {
+			// Okay, so the platform is ready and our plugins are available.
+			// Here you can do any higher level native things you might need.
+			StatusBar.overlaysWebView(true); // let status var overlay webview
+			StatusBar.backgroundColorByHexString('#B71C1C');
+		});
+	}
 }
 
 ionicBootstrap(MyApp, [], {
-  modalEnter: 'modal-slide-in',
-  modalLeave: 'modal-slide-out',
-  tabsHighlight: true,
-  platforms: {
-    ios: {
-      tabsPlacement: 'top',
-      iconMode: 'ios',
-      pageTransition: 'ios',
-      activator: "highlight",
-    },
-    android: {
-      tabsPlacement: 'top',
-      tabsLayout: "icon-top",
-      iconMode: 'md',
-      pageTransition: 'android',
-      activator: "ripple",
-    }
-  }
+	modalEnter: 'modal-slide-in',
+	modalLeave: 'modal-slide-out',
+	tabsHighlight: true,
+	platforms: {
+		ios: {
+			tabsPlacement: 'top',
+			iconMode: 'ios',
+			pageTransition: 'ios',
+			activator: "highlight",
+		},
+		android: {
+			tabsPlacement: 'top',
+			tabsLayout: "icon-top",
+			iconMode: 'md',
+			pageTransition: 'android',
+			activator: "ripple",
+		}
+	}
 });
